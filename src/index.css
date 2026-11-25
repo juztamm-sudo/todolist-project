@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-accent: #7C3AED;
+  --color-accent-soft: #F3EEFF;
+  --color-success: #059669;
+  --color-success-container: #ECFDF5;
+  --color-on-success-container: #065F46;
+  --color-warning: #D97706;
+  --color-warning-container: #FFFBEB;
+  --color-on-warning-container: #92400E;
+
+  --color-light-primary: #5300B7;
+  --color-light-on-primary: #FFFFFF;
+  --color-light-primary-container: #6D28D9;
+  --color-light-on-primary-container: #FFFFFF;
+  --color-light-secondary: #523883;
+  --color-light-secondary-container: #F3EEFF;
+  --color-light-on-secondary-container: #4C1D95;
+  --color-light-tertiary: #0F766E;
+  --color-light-error: #DC2626;
+  --color-light-error-container: #FEF2F2;
+  --color-light-on-error-container: #991B1B;
+  --color-light-surface: #F8F9FC;
+  --color-light-surface-container-lowest: #FFFFFF;
+  --color-light-surface-container-low: #F3F4F8;
+  --color-light-surface-container: #ECEEF4;
+  --color-light-on-surface: #18181B;
+  --color-light-on-surface-variant: #52525B;
+  --color-light-outline: #71717A;
+  --color-light-outline-variant: #E4E4E7;
+
+  --color-dark-primary: #D3BBFF;
+  --color-dark-on-primary: #3F008D;
+  --color-dark-primary-container: #6D28D9;
+  --color-dark-on-primary-container: #EDE9FE;
+  --color-dark-secondary-container: #2E1065;
+  --color-dark-on-secondary-container: #EDE9FE;
+  --color-dark-tertiary: #5EEAD4;
+  --color-dark-error: #FCA5A5;
+  --color-dark-error-container: #991B1B;
+  --color-dark-on-error-container: #FEE2E2;
+  --color-dark-surface: #111116;
+  --color-dark-surface-container-lowest: #18181F;
+  --color-dark-surface-container-low: #1E1E26;
+  --color-dark-surface-container: #24242E;
+  --color-dark-on-surface: #F4F4F5;
+  --color-dark-on-surface-variant: #A1A1AA;
+  --color-dark-outline: #71717A;
+  --color-dark-outline-variant: #27272A;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+  }
+}
+
+@keyframes taskFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.view-transition {
+  animation: taskFadeIn 220ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view-transition {
+    animation: none;
+  }
+}

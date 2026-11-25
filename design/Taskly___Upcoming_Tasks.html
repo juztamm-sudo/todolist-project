@@ -1,0 +1,424 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taskly — Upcoming Tasks</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config" data-stitch-original-src="8ba889bfcff87cf6===../../tailwind.config.js">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#7C3AED',
+        'accent-soft': '#F3EEFF',
+        'success': '#059669',
+        'on-success': '#1C1C1C',
+        'success-container': '#ECFDF5',
+        'on-success-container': '#065F46',
+        'warning': '#D97706',
+        'on-warning': '#2A2A2A',
+        'warning-container': '#FFFBEB',
+        'on-warning-container': '#92400E',
+        'light-primary': '#5300B7',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#6D28D9',
+        'light-on-primary-container': '#FFFFFF',
+        'light-secondary': '#523883',
+        'light-on-secondary': '#FFFFFF',
+        'light-secondary-container': '#F3EEFF',
+        'light-on-secondary-container': '#4C1D95',
+        'light-tertiary': '#0F766E',
+        'light-on-tertiary': '#FFFFFF',
+        'light-tertiary-container': '#CCFBF1',
+        'light-on-tertiary-container': '#115E59',
+        'light-error': '#DC2626',
+        'light-on-error': '#FFFFFF',
+        'light-error-container': '#FEF2F2',
+        'light-on-error-container': '#991B1B',
+        'light-background': '#F8F9FC',
+        'light-on-background': '#18181B',
+        'light-surface': '#F8F9FC',
+        'light-surface-dim': '#E4E7F0',
+        'light-surface-bright': '#FFFFFF',
+        'light-surface-container-lowest': '#FFFFFF',
+        'light-surface-container-low': '#F3F4F8',
+        'light-surface-container': '#ECEEF4',
+        'light-surface-container-high': '#E5E7EF',
+        'light-surface-container-highest': '#DCE0EA',
+        'light-on-surface': '#18181B',
+        'light-surface-variant': '#EDEFF5',
+        'light-on-surface-variant': '#52525B',
+        'light-outline': '#71717A',
+        'light-outline-variant': '#E4E4E7',
+        'light-inverse-surface': '#18181B',
+        'light-inverse-on-surface': '#F8F9FC',
+        'light-inverse-primary': '#D3BBFF',
+        'light-shadow': '#0F172A',
+        'light-scrim': '#0F172A',
+        'dark-primary': '#D3BBFF',
+        'dark-on-primary': '#3F008D',
+        'dark-primary-container': '#6D28D9',
+        'dark-on-primary-container': '#EDE9FE',
+        'dark-secondary': '#D3BBFF',
+        'dark-on-secondary': '#3A206B',
+        'dark-secondary-container': '#2E1065',
+        'dark-on-secondary-container': '#EDE9FE',
+        'dark-tertiary': '#5EEAD4',
+        'dark-on-tertiary': '#042F2E',
+        'dark-tertiary-container': '#115E59',
+        'dark-on-tertiary-container': '#CCFBF1',
+        'dark-error': '#FCA5A5',
+        'dark-on-error': '#7F1D1D',
+        'dark-error-container': '#991B1B',
+        'dark-on-error-container': '#FEE2E2',
+        'dark-background': '#111116',
+        'dark-on-background': '#F4F4F5',
+        'dark-surface': '#111116',
+        'dark-surface-dim': '#0B0B0E',
+        'dark-surface-bright': '#27272A',
+        'dark-surface-container-lowest': '#18181F',
+        'dark-surface-container-low': '#1E1E26',
+        'dark-surface-container': '#24242E',
+        'dark-surface-container-high': '#2C2C38',
+        'dark-surface-container-highest': '#353544',
+        'dark-on-surface': '#F4F4F5',
+        'dark-surface-variant': '#27272A',
+        'dark-on-surface-variant': '#A1A1AA',
+        'dark-outline': '#71717A',
+        'dark-outline-variant': '#27272A',
+        'dark-inverse-surface': '#F4F4F5',
+        'dark-inverse-on-surface': '#18181B',
+        'dark-inverse-primary': '#6D28D9',
+        'dark-shadow': '#000000',
+        'dark-scrim': '#000000',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '10px',
+        'md': '12px',
+        'lg': '14px',
+        'xl': '18px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '32px',
+        'page-margin': '32px',
+      },
+      fontFamily: {
+        'display': ['"Inter"', 'sans-serif'],
+        'headline': ['"Inter"', 'sans-serif'],
+        'title': ['"Inter"', 'sans-serif'],
+        'body': ['"Inter"', 'sans-serif'],
+        'label': ['"Inter"', 'sans-serif'],
+        'mono': ['"JetBrains Mono"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '-0.75px', fontWeight: '700' }],
+        'display-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'headline-lg': ['28px', { lineHeight: '36px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'headline-md': ['22px', { lineHeight: '28px', letterSpacing: '-0.3px', fontWeight: '600' }],
+        'headline-sm': ['18px', { lineHeight: '24px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'title-md': ['16px', { lineHeight: '22px', letterSpacing: '-0.1px', fontWeight: '600' }],
+        'title-sm': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '500' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.1px', fontWeight: '500' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.3px', fontWeight: '600' }],
+        'mono-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'checkbox-pop': '180ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'checkbox-pop': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'checkbox-pop': 'cubic-bezier(0.22, 1, 0.36, 1)',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => lucide.createIcons());</script>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased">
+  <div class="min-h-screen flex bg-light-surface">
+
+    <!-- Fixed Left Sidebar (Shell Parity) -->
+    <aside class="hidden lg:flex sticky top-0 left-0 z-40 w-64 min-h-screen bg-light-surface-container-lowest border-r border-light-outline-variant flex-col justify-between px-4 py-5">
+      <div class="flex flex-col gap-6">
+        <div class="flex items-center justify-between px-2">
+          <a href="../dashboard/Dashboard.html" class="flex items-center gap-2.5">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-DEFAULT bg-light-primary text-light-on-primary shadow-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 11l3 3L22 4"></path>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+              </svg>
+            </span>
+            <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface tracking-tight">Taskly</span>
+          </a>
+        </div>
+
+        <nav aria-label="Primary" class="flex flex-col gap-1">
+          <a href="../dashboard/Dashboard.html" class="flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change">
+            <span class="flex items-center gap-2.5">
+              <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Dashboard</span>
+            </span>
+          </a>
+          <a href="../dashboard/Dashboard.html" class="flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change">
+            <span class="flex items-center gap-2.5">
+              <i data-lucide="check-square" class="w-4 h-4"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">My Tasks</span>
+            </span>
+            <span data-design-text-token="label-sm" class="font-label text-label-sm px-2 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant tabular-nums">9</span>
+          </a>
+          <a href="../dashboard/Dashboard.html" class="flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change">
+            <span class="flex items-center gap-2.5">
+              <i data-lucide="sun" class="w-4 h-4"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Today</span>
+            </span>
+            <span data-design-text-token="label-sm" class="font-label text-label-sm px-2 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant tabular-nums">5</span>
+          </a>
+          <a href="#" class="flex items-center justify-between px-3 py-2 rounded-DEFAULT bg-light-secondary-container text-light-on-secondary-container">
+            <span class="flex items-center gap-2.5">
+              <i data-lucide="calendar-days" class="w-4 h-4"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Upcoming</span>
+            </span>
+            <span data-design-text-token="label-sm" class="font-label text-label-sm px-2 py-0.5 rounded-full bg-light-surface-container-lowest text-light-on-secondary-container tabular-nums">4</span>
+          </a>
+          <a href="../dashboard/Dashboard.html" class="flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change">
+            <span class="flex items-center gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Completed</span>
+            </span>
+          </a>
+          <a href="../dashboard/Dashboard.html" class="flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change">
+            <span class="flex items-center gap-2.5">
+              <i data-lucide="star" class="w-4 h-4"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Important</span>
+            </span>
+          </a>
+        </nav>
+
+        <div class="flex flex-col gap-2 pt-4 border-t border-light-outline-variant">
+          <div class="px-3">
+            <span data-design-text-token="label-md" class="font-label text-label-md text-light-outline uppercase tracking-wider">Categories</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <div class="flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant">
+              <span class="flex items-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-accent" aria-hidden="true"></span>
+                <span data-design-text-token="body-md" class="font-body text-body-md">Product Design</span>
+              </span>
+              <span data-design-text-token="label-md" class="font-label text-label-md text-light-outline tabular-nums">3</span>
+            </div>
+            <div class="flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant">
+              <span class="flex items-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-light-tertiary" aria-hidden="true"></span>
+                <span data-design-text-token="body-md" class="font-body text-body-md">Engineering</span>
+              </span>
+              <span data-design-text-token="label-md" class="font-label text-label-md text-light-outline tabular-nums">3</span>
+            </div>
+            <div class="flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant">
+              <span class="flex items-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-warning" aria-hidden="true"></span>
+                <span data-design-text-token="body-md" class="font-body text-body-md">Marketing</span>
+              </span>
+              <span data-design-text-token="label-md" class="font-label text-label-md text-light-outline tabular-nums">2</span>
+            </div>
+            <div class="flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant">
+              <span class="flex items-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-success" aria-hidden="true"></span>
+                <span data-design-text-token="body-md" class="font-body text-body-md">Personal</span>
+              </span>
+              <span data-design-text-token="label-md" class="font-label text-label-md text-light-outline tabular-nums">1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-light-outline-variant">
+        <a href="../settings/Settings.html" class="flex items-center gap-2.5 px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change">
+          <i data-lucide="settings" class="w-4 h-4"></i>
+          <span data-design-text-token="label-lg" class="font-label text-label-lg">Settings</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <div class="flex-1 flex flex-col min-w-0">
+      <header class="sticky top-0 z-20 bg-light-surface/95 border-b border-light-outline-variant px-6 lg:px-8 py-3.5">
+        <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+          <div class="flex items-center gap-3 flex-1 max-w-md">
+            <label data-component-id="input-field-icon" data-component-type="input-field" data-component-variant="search" class="relative flex items-center w-full">
+              <span class="sr-only" data-design-text-token="label-md">Search upcoming tasks</span>
+              <span aria-hidden="true" class="absolute left-3.5 text-light-outline pointer-events-none">
+                <i data-lucide="search" class="w-4 h-4"></i>
+              </span>
+              <input type="search" placeholder="Filter upcoming tasks..." class="w-full pl-10 pr-4 py-2 rounded-DEFAULT bg-light-surface-container-lowest border border-light-outline-variant text-light-on-surface placeholder:text-light-outline font-body text-body-md focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
+            </label>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="../add-task-modal/AddTaskModal.html" data-component-id="button-with-icon" data-component-type="button" data-component-variant="with-icon" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-DEFAULT bg-light-primary-container text-light-on-primary-container hover:bg-light-primary transition-colors duration-state-change shadow-sm">
+              <i data-lucide="plus" class="w-4 h-4" aria-hidden="true"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg whitespace-nowrap">Add New Task</span>
+            </a>
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrBjt60Db1qVzD1OGmt7flyJbbN8YC_QFIQx6jue6sLcpSufMkRiDiYvd0CwB097GdcnsgXILRGEwhCLRj5VVKfWG4meSvpeY2sRBheZg620vE-4c3IYl_3-rzeEWvTjbliKq_TkyVN_1cl82yJ4s6U-yB2hZYgWizqTFuzl2sfqDBJhHcqae26T0avtQIVQT3n_G9WF2-Rx9Jpy-DKpbDrmkRG6u9LUJyY94Q_0lFlNapcF9zE" alt="Maya Lin profile avatar" class="w-8 h-8 rounded-full object-cover border border-light-outline-variant" data-stitch-original-src="c17134d603e9130e===../../images/avatar_user.jpg">
+          </div>
+        </div>
+      </header>
+
+      <main class="flex-1 px-6 lg:px-8 py-8">
+        <div class="max-w-6xl mx-auto flex flex-col gap-8">
+          <section class="flex flex-col gap-1">
+            <h1 data-design-text-token="headline-lg" class="font-headline text-headline-lg text-light-on-surface">Upcoming Schedule</h1>
+            <p data-design-text-token="body-lg" class="font-body text-body-lg text-light-on-surface-variant">Plan ahead with tasks grouped by upcoming dates.</p>
+          </section>
+
+          <!-- Date Group 1: Tomorrow -->
+          <section class="bg-light-surface-container-lowest border border-light-outline-variant rounded-lg shadow-[0_1px_3px_rgba(15,23,42,0.04),0_4px_12px_rgba(15,23,42,0.03)] overflow-hidden">
+            <header class="flex items-center justify-between px-5 py-4 bg-light-surface-container-low/50 border-b border-light-outline-variant">
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="calendar" class="w-4 h-4 text-accent"></i>
+                <h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">Tomorrow · Thu, Nov 26</h2>
+              </div>
+              <span data-design-text-token="label-sm" class="font-label text-label-sm px-2.5 py-0.5 rounded-full bg-light-secondary-container text-light-on-secondary-container tabular-nums">2 tasks</span>
+            </header>
+            <div class="divide-y divide-light-outline-variant">
+              <div class="flex items-center justify-between gap-4 px-5 py-4 hover:bg-light-surface-container-low/60 transition-colors duration-state-change">
+                <div class="flex items-start gap-3.5">
+                  <span class="w-5 h-5 mt-0.5 rounded-sm border-2 border-light-outline/60 bg-light-surface-container-lowest flex-shrink-0"></span>
+                  <div class="flex flex-col gap-0.5">
+                    <span data-design-text-token="title-sm" class="font-title text-title-sm text-light-on-surface">Prepare user interview synthesis deck</span>
+                    <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">Summarize 6 customer sessions on recurring task workflows.</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 flex-shrink-0">
+                  <span data-design-text-token="mono-sm" class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums">10:30 AM</span>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-light-error-container text-light-on-error-container">
+                    <span class="w-1.5 h-1.5 rounded-full bg-light-error"></span>
+                    <span data-design-text-token="label-md" class="font-label text-label-md">High</span>
+                  </span>
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant border border-light-outline-variant">
+                    <span data-design-text-token="label-md" class="font-label text-label-md">Product Design</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between gap-4 px-5 py-4 hover:bg-light-surface-container-low/60 transition-colors duration-state-change">
+                <div class="flex items-start gap-3.5">
+                  <span class="w-5 h-5 mt-0.5 rounded-sm border-2 border-light-outline/60 bg-light-surface-container-lowest flex-shrink-0"></span>
+                  <div class="flex flex-col gap-0.5">
+                    <span data-design-text-token="title-sm" class="font-title text-title-sm text-light-on-surface">Optimize task query indexing in Postgres</span>
+                    <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">Add composite index on workspace_id and due_date for faster load.</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 flex-shrink-0">
+                  <span data-design-text-token="mono-sm" class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums">3:00 PM</span>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-warning-container text-on-warning-container">
+                    <span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+                    <span data-design-text-token="label-md" class="font-label text-label-md">Medium</span>
+                  </span>
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant border border-light-outline-variant">
+                    <span data-design-text-token="label-md" class="font-label text-label-md">Engineering</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Date Group 2: Friday -->
+          <section class="bg-light-surface-container-lowest border border-light-outline-variant rounded-lg shadow-[0_1px_3px_rgba(15,23,42,0.04),0_4px_12px_rgba(15,23,42,0.03)] overflow-hidden">
+            <header class="flex items-center justify-between px-5 py-4 bg-light-surface-container-low/50 border-b border-light-outline-variant">
+              <div class="flex items-center gap-2.5">
+                <i data-lucide="calendar" class="w-4 h-4 text-accent"></i>
+                <h2 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">Friday · Nov 27</h2>
+              </div>
+              <span data-design-text-token="label-sm" class="font-label text-label-sm px-2.5 py-0.5 rounded-full bg-light-secondary-container text-light-on-secondary-container tabular-nums">2 tasks</span>
+            </header>
+            <div class="divide-y divide-light-outline-variant">
+              <div class="flex items-center justify-between gap-4 px-5 py-4 hover:bg-light-surface-container-low/60 transition-colors duration-state-change">
+                <div class="flex items-start gap-3.5">
+                  <span class="w-5 h-5 mt-0.5 rounded-sm border-2 border-light-outline/60 bg-light-surface-container-lowest flex-shrink-0"></span>
+                  <div class="flex flex-col gap-0.5">
+                    <span data-design-text-token="title-sm" class="font-title text-title-sm text-light-on-surface">Publish Product Hunt teaser graphics</span>
+                    <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">Export light-mode dashboard shots at 2x resolution.</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 flex-shrink-0">
+                  <span data-design-text-token="mono-sm" class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums">1:00 PM</span>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-warning-container text-on-warning-container">
+                    <span class="w-1.5 h-1.5 rounded-full bg-warning"></span>
+                    <span data-design-text-token="label-md" class="font-label text-label-md">Medium</span>
+                  </span>
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant border border-light-outline-variant">
+                    <span data-design-text-token="label-md" class="font-label text-label-md">Marketing</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between gap-4 px-5 py-4 hover:bg-light-surface-container-low/60 transition-colors duration-state-change">
+                <div class="flex items-start gap-3.5">
+                  <span class="w-5 h-5 mt-0.5 rounded-sm border-2 border-light-outline/60 bg-light-surface-container-lowest flex-shrink-0"></span>
+                  <div class="flex flex-col gap-0.5">
+                    <span data-design-text-token="title-sm" class="font-title text-title-sm text-light-on-surface">Refine onboarding empty-state illustrations</span>
+                    <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">Align stroke weights and soft violet accents across all views.</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 flex-shrink-0">
+                  <span data-design-text-token="mono-sm" class="font-mono text-mono-sm text-light-on-surface-variant tabular-nums">4:00 PM</span>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-success-container text-on-success-container">
+                    <span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+                    <span data-design-text-token="label-md" class="font-label text-label-md">Low</span>
+                  </span>
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant border border-light-outline-variant">
+                    <span data-design-text-token="label-md" class="font-label text-label-md">Product Design</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Weekend Empty State Card -->
+          <section class="bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-5">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrDLYn0GEaZRUiKRLTEQm7EPAvnHDNe7ygeAE2HeeAPL0MwcUHNCDFn4UhjdMrJ_ze0G_p0jHYSkUpWwMjO1xOMj88gkghuTkUjjH8h3ScQUDmvaVuot-WWm6M8JS5oRzSkwSsw8p84K76q8fc6rKSNhqgOjVKrDTH6bzVOJf2iBxUDA8yzM6ZWO8GJW7U0tQ-bGsNjyh59OXkX4reJ92dl-9bstio-I4eOonpmLyGDDU8iGkGb_rsl-RwracMdCGPnwlQ" alt="Calm desk illustration for clear weekend" class="w-32 h-24 object-cover rounded-md flex-shrink-0" data-stitch-original-src="a683f1dce7a4e433===../../images/empty_tasks_illustration.jpg">
+              <div class="flex flex-col gap-1">
+                <h3 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">Weekend · Nov 28 – 29 is clear</h3>
+                <p data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface-variant">No tasks scheduled for the weekend yet. Enjoy the open space or add a personal reminder.</p>
+              </div>
+            </div>
+            <a href="../add-task-modal/AddTaskModal.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-DEFAULT bg-light-secondary-container text-light-on-secondary-container hover:bg-accent-soft transition-colors duration-state-change whitespace-nowrap">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Schedule Task</span>
+            </a>
+          </section>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+</body></html>

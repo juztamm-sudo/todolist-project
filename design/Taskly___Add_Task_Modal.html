@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taskly — Add Task Modal</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config" data-stitch-original-src="8ba889bfcff87cf6===../../tailwind.config.js">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#7C3AED',
+        'accent-soft': '#F3EEFF',
+        'success': '#059669',
+        'on-success': '#1C1C1C',
+        'success-container': '#ECFDF5',
+        'on-success-container': '#065F46',
+        'warning': '#D97706',
+        'on-warning': '#2A2A2A',
+        'warning-container': '#FFFBEB',
+        'on-warning-container': '#92400E',
+        'light-primary': '#5300B7',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#6D28D9',
+        'light-on-primary-container': '#FFFFFF',
+        'light-secondary': '#523883',
+        'light-on-secondary': '#FFFFFF',
+        'light-secondary-container': '#F3EEFF',
+        'light-on-secondary-container': '#4C1D95',
+        'light-tertiary': '#0F766E',
+        'light-on-tertiary': '#FFFFFF',
+        'light-tertiary-container': '#CCFBF1',
+        'light-on-tertiary-container': '#115E59',
+        'light-error': '#DC2626',
+        'light-on-error': '#FFFFFF',
+        'light-error-container': '#FEF2F2',
+        'light-on-error-container': '#991B1B',
+        'light-background': '#F8F9FC',
+        'light-on-background': '#18181B',
+        'light-surface': '#F8F9FC',
+        'light-surface-dim': '#E4E7F0',
+        'light-surface-bright': '#FFFFFF',
+        'light-surface-container-lowest': '#FFFFFF',
+        'light-surface-container-low': '#F3F4F8',
+        'light-surface-container': '#ECEEF4',
+        'light-surface-container-high': '#E5E7EF',
+        'light-surface-container-highest': '#DCE0EA',
+        'light-on-surface': '#18181B',
+        'light-surface-variant': '#EDEFF5',
+        'light-on-surface-variant': '#52525B',
+        'light-outline': '#71717A',
+        'light-outline-variant': '#E4E4E7',
+        'light-inverse-surface': '#18181B',
+        'light-inverse-on-surface': '#F8F9FC',
+        'light-inverse-primary': '#D3BBFF',
+        'light-shadow': '#0F172A',
+        'light-scrim': '#0F172A',
+        'dark-primary': '#D3BBFF',
+        'dark-on-primary': '#3F008D',
+        'dark-primary-container': '#6D28D9',
+        'dark-on-primary-container': '#EDE9FE',
+        'dark-secondary': '#D3BBFF',
+        'dark-on-secondary': '#3A206B',
+        'dark-secondary-container': '#2E1065',
+        'dark-on-secondary-container': '#EDE9FE',
+        'dark-tertiary': '#5EEAD4',
+        'dark-on-tertiary': '#042F2E',
+        'dark-tertiary-container': '#115E59',
+        'dark-on-tertiary-container': '#CCFBF1',
+        'dark-error': '#FCA5A5',
+        'dark-on-error': '#7F1D1D',
+        'dark-error-container': '#991B1B',
+        'dark-on-error-container': '#FEE2E2',
+        'dark-background': '#111116',
+        'dark-on-background': '#F4F4F5',
+        'dark-surface': '#111116',
+        'dark-surface-dim': '#0B0B0E',
+        'dark-surface-bright': '#27272A',
+        'dark-surface-container-lowest': '#18181F',
+        'dark-surface-container-low': '#1E1E26',
+        'dark-surface-container': '#24242E',
+        'dark-surface-container-high': '#2C2C38',
+        'dark-surface-container-highest': '#353544',
+        'dark-on-surface': '#F4F4F5',
+        'dark-surface-variant': '#27272A',
+        'dark-on-surface-variant': '#A1A1AA',
+        'dark-outline': '#71717A',
+        'dark-outline-variant': '#27272A',
+        'dark-inverse-surface': '#F4F4F5',
+        'dark-inverse-on-surface': '#18181B',
+        'dark-inverse-primary': '#6D28D9',
+        'dark-shadow': '#000000',
+        'dark-scrim': '#000000',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '10px',
+        'md': '12px',
+        'lg': '14px',
+        'xl': '18px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '32px',
+        'page-margin': '32px',
+      },
+      fontFamily: {
+        'display': ['"Inter"', 'sans-serif'],
+        'headline': ['"Inter"', 'sans-serif'],
+        'title': ['"Inter"', 'sans-serif'],
+        'body': ['"Inter"', 'sans-serif'],
+        'label': ['"Inter"', 'sans-serif'],
+        'mono': ['"JetBrains Mono"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '-0.75px', fontWeight: '700' }],
+        'display-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'headline-lg': ['28px', { lineHeight: '36px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'headline-md': ['22px', { lineHeight: '28px', letterSpacing: '-0.3px', fontWeight: '600' }],
+        'headline-sm': ['18px', { lineHeight: '24px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'title-md': ['16px', { lineHeight: '22px', letterSpacing: '-0.1px', fontWeight: '600' }],
+        'title-sm': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '500' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.1px', fontWeight: '500' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.3px', fontWeight: '600' }],
+        'mono-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'checkbox-pop': '180ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'checkbox-pop': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'checkbox-pop': 'cubic-bezier(0.22, 1, 0.36, 1)',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => lucide.createIcons());</script>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased">
+  <div class="relative min-h-screen flex bg-light-surface">
+
+    <!-- Background Dashboard Shell (Dimmed behind Modal) -->
+    <aside class="hidden lg:flex w-64 min-h-screen bg-light-surface-container-lowest border-r border-light-outline-variant flex-col justify-between px-4 py-5">
+      <div class="flex flex-col gap-6">
+        <div class="flex items-center gap-2.5 px-2">
+          <span class="inline-flex items-center justify-center w-8 h-8 rounded-DEFAULT bg-light-primary text-light-on-primary shadow-sm">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 11l3 3L22 4"></path>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+          </span>
+          <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">Taskly</span>
+        </div>
+        <nav class="flex flex-col gap-1">
+          <div class="flex items-center gap-2.5 px-3 py-2 rounded-DEFAULT bg-light-secondary-container text-light-on-secondary-container">
+            <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Dashboard</span>
+          </div>
+          <div class="flex items-center gap-2.5 px-3 py-2 rounded-DEFAULT text-light-on-surface-variant">
+            <i data-lucide="check-square" class="w-4 h-4"></i>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">My Tasks</span>
+          </div>
+          <div class="flex items-center gap-2.5 px-3 py-2 rounded-DEFAULT text-light-on-surface-variant">
+            <i data-lucide="sun" class="w-4 h-4"></i>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Today</span>
+          </div>
+          <div class="flex items-center gap-2.5 px-3 py-2 rounded-DEFAULT text-light-on-surface-variant">
+            <i data-lucide="calendar-days" class="w-4 h-4"></i>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Upcoming</span>
+          </div>
+        </nav>
+      </div>
+    </aside>
+
+    <div class="flex-1 flex flex-col min-w-0">
+      <header class="bg-light-surface border-b border-light-outline-variant px-8 py-3.5">
+        <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+          <div class="w-80 h-9 rounded-DEFAULT bg-light-surface-container-lowest border border-light-outline-variant"></div>
+          <div class="flex items-center gap-3">
+            <div class="px-4 py-2 rounded-DEFAULT bg-light-primary-container text-light-on-primary-container">
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">+ Add New Task</span>
+            </div>
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrBjt60Db1qVzD1OGmt7flyJbbN8YC_QFIQx6jue6sLcpSufMkRiDiYvd0CwB097GdcnsgXILRGEwhCLRj5VVKfWG4meSvpeY2sRBheZg620vE-4c3IYl_3-rzeEWvTjbliKq_TkyVN_1cl82yJ4s6U-yB2hZYgWizqTFuzl2sfqDBJhHcqae26T0avtQIVQT3n_G9WF2-Rx9Jpy-DKpbDrmkRG6u9LUJyY94Q_0lFlNapcF9zE" alt="Maya Lin profile avatar" class="w-8 h-8 rounded-full object-cover" data-stitch-original-src="c17134d603e9130e===../../images/avatar_user.jpg">
+          </div>
+        </div>
+      </header>
+      <main class="flex-1 px-8 py-8">
+        <div class="max-w-6xl mx-auto flex flex-col gap-6 opacity-40">
+          <h1 data-design-text-token="headline-lg" class="font-headline text-headline-lg text-light-on-surface">Good afternoon 👋</h1>
+          <div class="grid grid-cols-3 gap-5">
+            <div class="h-28 rounded-lg bg-light-surface-container-lowest border border-light-outline-variant"></div>
+            <div class="h-28 rounded-lg bg-light-surface-container-lowest border border-light-outline-variant"></div>
+            <div class="h-28 rounded-lg bg-light-surface-container-lowest border border-light-outline-variant"></div>
+          </div>
+          <div class="h-64 rounded-lg bg-light-surface-container-lowest border border-light-outline-variant"></div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal Scrim & Centered Add Task Modal -->
+    <div class="fixed inset-0 z-50 bg-light-scrim/35 flex items-center justify-center p-4">
+      <section role="dialog" aria-modal="true" aria-labelledby="add-modal-title" data-component-id="modal-standard" data-component-type="modal" data-component-variant="standard" class="w-full max-w-lg rounded-xl bg-light-surface-container-lowest border border-light-outline-variant shadow-[0_20px_40px_-12px_rgba(15,23,42,0.18)] overflow-hidden">
+        <header class="flex items-start justify-between px-6 pt-6 pb-4 border-b border-light-outline-variant">
+          <div>
+            <h2 id="add-modal-title" data-design-text-token="headline-sm" class="font-headline text-headline-sm text-light-on-surface">Add New Task</h2>
+            <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant mt-0.5">Capture a task with due date, priority, and category.</p>
+          </div>
+          <a href="../dashboard/Dashboard.html" aria-label="Close modal" class="inline-flex items-center justify-center w-8 h-8 rounded-sm text-light-on-surface-variant hover:bg-light-surface-container-low transition-colors duration-state-change">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </a>
+        </header>
+
+        <form class="px-6 py-5 flex flex-col gap-4">
+          <label class="flex flex-col gap-1.5">
+            <span data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface">Task title</span>
+            <input type="text" value="Design interactive onboarding checklist" placeholder="e.g., Finalize Q4 roadmap" class="w-full px-3.5 py-2.5 rounded-DEFAULT bg-light-surface-container-lowest border border-accent ring-2 ring-accent/20 text-light-on-surface font-body text-body-md focus:outline-none">
+          </label>
+
+          <label class="flex flex-col gap-1.5">
+            <span data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface">Description</span>
+            <textarea rows="3" placeholder="Add context, links, or key deliverables..." class="w-full px-3.5 py-2.5 rounded-DEFAULT bg-light-surface-container-lowest border border-light-outline-variant text-light-on-surface font-body text-body-md focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 resize-none">Include 3 quick-start steps, progress bar, and subtle confetti micro-interaction on completion.</textarea>
+          </label>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <label class="flex flex-col gap-1.5">
+              <span data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface">Due date</span>
+              <input type="date" value="2026-11-26" class="w-full px-3.5 py-2.5 rounded-DEFAULT bg-light-surface-container-lowest border border-light-outline-variant text-light-on-surface font-body text-body-md focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
+            </label>
+
+            <label class="flex flex-col gap-1.5">
+              <span data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface">Category</span>
+              <select class="w-full px-3.5 py-2.5 rounded-DEFAULT bg-light-surface-container-lowest border border-light-outline-variant text-light-on-surface font-body text-body-md focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
+                <option selected>Product Design</option>
+                <option>Engineering</option>
+                <option>Marketing</option>
+                <option>Personal</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <span data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface">Priority</span>
+            <div class="grid grid-cols-3 gap-2.5">
+              <label class="cursor-pointer">
+                <input type="radio" name="modal-priority" value="High" checked class="peer sr-only">
+                <span class="flex items-center justify-center gap-1.5 px-3 py-2 rounded-DEFAULT border border-light-error bg-light-error-container text-light-on-error-container">
+                  <span class="w-2 h-2 rounded-full bg-light-error"></span>
+                  <span data-design-text-token="label-md" class="font-label text-label-md">High</span>
+                </span>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="modal-priority" value="Medium" class="peer sr-only">
+                <span class="flex items-center justify-center gap-1.5 px-3 py-2 rounded-DEFAULT border border-light-outline-variant text-light-on-surface-variant hover:bg-light-surface-container-low">
+                  <span class="w-2 h-2 rounded-full bg-warning"></span>
+                  <span data-design-text-token="label-md" class="font-label text-label-md">Medium</span>
+                </span>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="modal-priority" value="Low" class="peer sr-only">
+                <span class="flex items-center justify-center gap-1.5 px-3 py-2 rounded-DEFAULT border border-light-outline-variant text-light-on-surface-variant hover:bg-light-surface-container-low">
+                  <span class="w-2 h-2 rounded-full bg-success"></span>
+                  <span data-design-text-token="label-md" class="font-label text-label-md">Low</span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </form>
+
+        <footer class="flex items-center justify-end gap-3 px-6 py-4 bg-light-surface-container-low/60 border-t border-light-outline-variant">
+          <a href="../dashboard/Dashboard.html" class="px-4 py-2 rounded-DEFAULT bg-light-surface-container-lowest border border-light-outline-variant text-light-on-surface hover:bg-light-surface-container-low transition-colors duration-state-change">
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Cancel</span>
+          </a>
+          <a href="../dashboard/Dashboard.html" class="px-4 py-2 rounded-DEFAULT bg-light-primary text-light-on-primary hover:bg-light-primary-container transition-colors duration-state-change shadow-sm">
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Save Task</span>
+          </a>
+        </footer>
+      </section>
+    </div>
+
+  </div>
+
+
+</body></html>

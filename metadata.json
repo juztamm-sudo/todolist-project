@@ -1,0 +1,6 @@
+{
+  "name": "Taskly",
+  "description": "Personal task workspace with daily focus overview, upcoming schedule, quick task capture, and workspace preferences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

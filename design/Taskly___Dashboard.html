@@ -1,0 +1,927 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taskly — Dashboard</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config" data-stitch-original-src="8ba889bfcff87cf6===../../tailwind.config.js">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#7C3AED',
+        'accent-soft': '#F3EEFF',
+        'success': '#059669',
+        'on-success': '#1C1C1C',
+        'success-container': '#ECFDF5',
+        'on-success-container': '#065F46',
+        'warning': '#D97706',
+        'on-warning': '#2A2A2A',
+        'warning-container': '#FFFBEB',
+        'on-warning-container': '#92400E',
+        'light-primary': '#5300B7',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#6D28D9',
+        'light-on-primary-container': '#FFFFFF',
+        'light-secondary': '#523883',
+        'light-on-secondary': '#FFFFFF',
+        'light-secondary-container': '#F3EEFF',
+        'light-on-secondary-container': '#4C1D95',
+        'light-tertiary': '#0F766E',
+        'light-on-tertiary': '#FFFFFF',
+        'light-tertiary-container': '#CCFBF1',
+        'light-on-tertiary-container': '#115E59',
+        'light-error': '#DC2626',
+        'light-on-error': '#FFFFFF',
+        'light-error-container': '#FEF2F2',
+        'light-on-error-container': '#991B1B',
+        'light-background': '#F8F9FC',
+        'light-on-background': '#18181B',
+        'light-surface': '#F8F9FC',
+        'light-surface-dim': '#E4E7F0',
+        'light-surface-bright': '#FFFFFF',
+        'light-surface-container-lowest': '#FFFFFF',
+        'light-surface-container-low': '#F3F4F8',
+        'light-surface-container': '#ECEEF4',
+        'light-surface-container-high': '#E5E7EF',
+        'light-surface-container-highest': '#DCE0EA',
+        'light-on-surface': '#18181B',
+        'light-surface-variant': '#EDEFF5',
+        'light-on-surface-variant': '#52525B',
+        'light-outline': '#71717A',
+        'light-outline-variant': '#E4E4E7',
+        'light-inverse-surface': '#18181B',
+        'light-inverse-on-surface': '#F8F9FC',
+        'light-inverse-primary': '#D3BBFF',
+        'light-shadow': '#0F172A',
+        'light-scrim': '#0F172A',
+        'dark-primary': '#D3BBFF',
+        'dark-on-primary': '#3F008D',
+        'dark-primary-container': '#6D28D9',
+        'dark-on-primary-container': '#EDE9FE',
+        'dark-secondary': '#D3BBFF',
+        'dark-on-secondary': '#3A206B',
+        'dark-secondary-container': '#2E1065',
+        'dark-on-secondary-container': '#EDE9FE',
+        'dark-tertiary': '#5EEAD4',
+        'dark-on-tertiary': '#042F2E',
+        'dark-tertiary-container': '#115E59',
+        'dark-on-tertiary-container': '#CCFBF1',
+        'dark-error': '#FCA5A5',
+        'dark-on-error': '#7F1D1D',
+        'dark-error-container': '#991B1B',
+        'dark-on-error-container': '#FEE2E2',
+        'dark-background': '#111116',
+        'dark-on-background': '#F4F4F5',
+        'dark-surface': '#111116',
+        'dark-surface-dim': '#0B0B0E',
+        'dark-surface-bright': '#27272A',
+        'dark-surface-container-lowest': '#18181F',
+        'dark-surface-container-low': '#1E1E26',
+        'dark-surface-container': '#24242E',
+        'dark-surface-container-high': '#2C2C38',
+        'dark-surface-container-highest': '#353544',
+        'dark-on-surface': '#F4F4F5',
+        'dark-surface-variant': '#27272A',
+        'dark-on-surface-variant': '#A1A1AA',
+        'dark-outline': '#71717A',
+        'dark-outline-variant': '#27272A',
+        'dark-inverse-surface': '#F4F4F5',
+        'dark-inverse-on-surface': '#18181B',
+        'dark-inverse-primary': '#6D28D9',
+        'dark-shadow': '#000000',
+        'dark-scrim': '#000000',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '10px',
+        'md': '12px',
+        'lg': '14px',
+        'xl': '18px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '32px',
+        'page-margin': '32px',
+      },
+      fontFamily: {
+        'display': ['"Inter"', 'sans-serif'],
+        'headline': ['"Inter"', 'sans-serif'],
+        'title': ['"Inter"', 'sans-serif'],
+        'body': ['"Inter"', 'sans-serif'],
+        'label': ['"Inter"', 'sans-serif'],
+        'mono': ['"JetBrains Mono"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '-0.75px', fontWeight: '700' }],
+        'display-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'headline-lg': ['28px', { lineHeight: '36px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'headline-md': ['22px', { lineHeight: '28px', letterSpacing: '-0.3px', fontWeight: '600' }],
+        'headline-sm': ['18px', { lineHeight: '24px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'title-md': ['16px', { lineHeight: '22px', letterSpacing: '-0.1px', fontWeight: '600' }],
+        'title-sm': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['13px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '500' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.1px', fontWeight: '500' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.3px', fontWeight: '600' }],
+        'mono-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'checkbox-pop': '180ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'checkbox-pop': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'checkbox-pop': 'cubic-bezier(0.22, 1, 0.36, 1)',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @keyframes taskFadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .view-transition {
+      animation: taskFadeIn 220ms cubic-bezier(0.2, 0, 0, 1);
+    }
+    .task-checkbox:checked + .checkbox-box {
+      background-color: #5300B7;
+      border-color: #5300B7;
+      transform: scale(1.06);
+    }
+    .task-checkbox:checked + .checkbox-box svg {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .checkbox-box svg {
+      opacity: 0;
+      transform: scale(0.6);
+      transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1), opacity 140ms ease-out;
+    }
+    dialog::backdrop {
+      background-color: rgba(15, 23, 42, 0.35);
+    }
+  </style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased selection:bg-light-secondary-container selection:text-light-on-secondary-container">
+  <div class="min-h-screen flex bg-light-surface">
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div id="mobile-backdrop" class="fixed inset-0 z-30 bg-light-scrim/35 hidden lg:hidden" onclick="toggleMobileSidebar(false)"></div>
+
+    <!-- Fixed Left Sidebar -->
+    <aside id="sidebar" class="fixed lg:sticky top-0 left-0 z-40 w-64 min-h-screen bg-light-surface-container-lowest border-r border-light-outline-variant flex flex-col justify-between px-4 py-5 -translate-x-full lg:translate-x-0 transition-transform duration-surface-enter">
+      <div class="flex flex-col gap-6">
+        <!-- Brand Logo -->
+        <div class="flex items-center justify-between px-2">
+          <a href="#" class="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-DEFAULT bg-light-primary text-light-on-primary shadow-sm">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 11l3 3L22 4"></path>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+              </svg>
+            </span>
+            <span data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface tracking-tight">Taskly</span>
+          </a>
+          <button type="button" class="lg:hidden inline-flex items-center justify-center w-8 h-8 rounded-sm text-light-on-surface-variant hover:bg-light-surface-container-low" aria-label="Close sidebar" onclick="toggleMobileSidebar(false)">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- Primary Navigation -->
+        <nav aria-label="Primary" class="flex flex-col gap-1">
+          <button type="button" data-nav="dashboard" onclick="switchView(&#39;dashboard&#39;)" class="nav-item flex items-center justify-between px-3 py-2 rounded-DEFAULT bg-light-secondary-container text-light-on-secondary-container transition-colors duration-state-change cursor-pointer">
+            <span class="flex items-center gap-2.5">
+              <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Dashboard</span>
+            </span>
+          </button>
+
+          <button type="button" data-nav="all" onclick="switchView(&#39;all&#39;)" class="nav-item flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change cursor-pointer">
+            <span class="flex items-center gap-2.5">
+              <i data-lucide="check-square" class="w-4 h-4"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">My Tasks</span>
+            </span>
+            <span id="nav-count-all" data-design-text-token="label-sm" class="font-label text-label-sm px-2 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant tabular-nums">9</span>
+          </button>
+
+          <button type="button" data-nav="today" onclick="switchView(&#39;today&#39;)" class="nav-item flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change cursor-pointer">
+            <span class="flex items-center gap-2.5">
+              <i data-lucide="sun" class="w-4 h-4"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Today</span>
+            </span>
+            <span id="nav-count-today" data-design-text-token="label-sm" class="font-label text-label-sm px-2 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant tabular-nums">5</span>
+          </button>
+
+          <button type="button" data-nav="upcoming" onclick="switchView(&#39;upcoming&#39;)" class="nav-item flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change cursor-pointer">
+            <span class="flex items-center gap-2.5">
+              <i data-lucide="calendar-days" class="w-4 h-4"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Upcoming</span>
+            </span>
+            <span id="nav-count-upcoming" data-design-text-token="label-sm" class="font-label text-label-sm px-2 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant tabular-nums">4</span>
+          </button>
+
+          <button type="button" data-nav="completed" onclick="switchView(&#39;completed&#39;)" class="nav-item flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change cursor-pointer">
+            <span class="flex items-center gap-2.5">
+              <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Completed</span>
+            </span>
+          </button>
+
+          <button type="button" data-nav="important" onclick="switchView(&#39;important&#39;)" class="nav-item flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change cursor-pointer">
+            <span class="flex items-center gap-2.5">
+              <i data-lucide="star" class="w-4 h-4"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Important</span>
+            </span>
+          </button>
+        </nav>
+
+        <!-- Categories Section -->
+        <div class="flex flex-col gap-2 pt-4 border-t border-light-outline-variant">
+          <div class="flex items-center justify-between px-3">
+            <span data-design-text-token="label-md" class="font-label text-label-md text-light-outline uppercase tracking-wider">Categories</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <button type="button" data-nav="cat-Product Design" onclick="switchView(&#39;cat-Product Design&#39;)" class="nav-item flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change cursor-pointer">
+              <span class="flex items-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-accent" aria-hidden="true"></span>
+                <span data-design-text-token="body-md" class="font-body text-body-md">Product Design</span>
+              </span>
+              <span data-design-text-token="label-md" class="font-label text-label-md text-light-outline tabular-nums">3</span>
+            </button>
+            <button type="button" data-nav="cat-Engineering" onclick="switchView(&#39;cat-Engineering&#39;)" class="nav-item flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change cursor-pointer">
+              <span class="flex items-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-light-tertiary" aria-hidden="true"></span>
+                <span data-design-text-token="body-md" class="font-body text-body-md">Engineering</span>
+              </span>
+              <span data-design-text-token="label-md" class="font-label text-label-md text-light-outline tabular-nums">3</span>
+            </button>
+            <button type="button" data-nav="cat-Marketing" onclick="switchView(&#39;cat-Marketing&#39;)" class="nav-item flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change cursor-pointer">
+              <span class="flex items-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-warning" aria-hidden="true"></span>
+                <span data-design-text-token="body-md" class="font-body text-body-md">Marketing</span>
+              </span>
+              <span data-design-text-token="label-md" class="font-label text-label-md text-light-outline tabular-nums">2</span>
+            </button>
+            <button type="button" data-nav="cat-Personal" onclick="switchView(&#39;cat-Personal&#39;)" class="nav-item flex items-center justify-between px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change cursor-pointer">
+              <span class="flex items-center gap-2.5">
+                <span class="w-2 h-2 rounded-full bg-success" aria-hidden="true"></span>
+                <span data-design-text-token="body-md" class="font-body text-body-md">Personal</span>
+              </span>
+              <span data-design-text-token="label-md" class="font-label text-label-md text-light-outline tabular-nums">1</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Settings Link -->
+      <div class="pt-4 border-t border-light-outline-variant">
+        <a href="../settings/Settings.html" class="flex items-center gap-2.5 px-3 py-2 rounded-DEFAULT text-light-on-surface-variant hover:bg-light-surface-container-low hover:text-light-on-surface transition-colors duration-state-change">
+          <i data-lucide="settings" class="w-4 h-4"></i>
+          <span data-design-text-token="label-lg" class="font-label text-label-lg">Settings</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Workspace Column -->
+    <div class="flex-1 flex flex-col min-w-0">
+      <!-- Top Utility Bar -->
+      <header class="sticky top-0 z-20 bg-light-surface/95 border-b border-light-outline-variant px-6 lg:px-8 py-3.5">
+        <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+          <div class="flex items-center gap-3 flex-1 max-w-md">
+            <button type="button" class="lg:hidden inline-flex items-center justify-center w-9 h-9 rounded-DEFAULT bg-light-surface-container-lowest border border-light-outline-variant text-light-on-surface" aria-label="Open navigation" onclick="toggleMobileSidebar(true)">
+              <i data-lucide="menu" class="w-4 h-4"></i>
+            </button>
+            <!-- Search Bar -->
+            <label data-component-id="input-field-icon" data-component-type="input-field" data-component-variant="search" class="relative flex items-center w-full">
+              <span class="sr-only" data-design-text-token="label-md">Search tasks</span>
+              <span aria-hidden="true" class="absolute left-3.5 text-light-outline pointer-events-none">
+                <i data-lucide="search" class="w-4 h-4"></i>
+              </span>
+              <input id="search-input" type="search" oninput="handleSearch(this.value)" placeholder="Search tasks, categories, or times..." class="w-full pl-10 pr-4 py-2 rounded-DEFAULT bg-light-surface-container-lowest border border-light-outline-variant text-light-on-surface placeholder:text-light-outline font-body text-body-md focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors duration-state-change">
+            </label>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <!-- Primary CTA -->
+            <button data-component-id="button-with-icon" data-component-type="button" data-component-variant="with-icon" type="button" onclick="openAddTaskModal()" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-DEFAULT bg-light-primary-container text-light-on-primary-container hover:bg-light-primary active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 transition-colors duration-state-change shadow-sm cursor-pointer">
+              <i data-lucide="plus" class="w-4 h-4" aria-hidden="true"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg whitespace-nowrap">Add New Task</span>
+            </button>
+
+            <!-- Profile Avatar -->
+            <button type="button" class="inline-flex items-center gap-2 rounded-full p-0.5 border border-light-outline-variant hover:border-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors duration-state-change cursor-pointer" aria-label="User profile">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrBjt60Db1qVzD1OGmt7flyJbbN8YC_QFIQx6jue6sLcpSufMkRiDiYvd0CwB097GdcnsgXILRGEwhCLRj5VVKfWG4meSvpeY2sRBheZg620vE-4c3IYl_3-rzeEWvTjbliKq_TkyVN_1cl82yJ4s6U-yB2hZYgWizqTFuzl2sfqDBJhHcqae26T0avtQIVQT3n_G9WF2-Rx9Jpy-DKpbDrmkRG6u9LUJyY94Q_0lFlNapcF9zE" alt="Maya Lin profile avatar" class="w-8 h-8 rounded-full object-cover" data-stitch-original-src="c17134d603e9130e===../../images/avatar_user.jpg">
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="flex-1 px-6 lg:px-8 py-8">
+        <div id="main-content" class="max-w-6xl mx-auto flex flex-col gap-8 view-transition">
+
+          <!-- Greeting & Date Header -->
+          <section class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div class="flex flex-col gap-1">
+              <div class="flex items-center gap-2 text-light-on-surface-variant">
+                <i data-lucide="calendar" class="w-4 h-4 text-accent"></i>
+                <span data-design-text-token="label-md" class="font-label text-label-md tabular-nums">Wednesday, November 25, 2026</span>
+              </div>
+              <h1 id="page-greeting" data-design-text-token="headline-lg" class="font-headline text-headline-lg text-light-on-surface">Good afternoon 👋</h1>
+              <p id="page-subtitle" data-design-text-token="body-lg" class="font-body text-body-lg text-light-on-surface-variant">Let&#39;s get things done today.</p>
+            </div>
+          </section>
+
+          <!-- Productivity Overview: 3 Summary Cards + Circular Progress -->
+          <section id="overview-section" aria-label="Productivity Overview" class="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+            <!-- Card 1: Total Tasks -->
+            <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="h-full bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-5 shadow-[0_1px_3px_rgba(15,23,42,0.04),0_4px_12px_rgba(15,23,42,0.03)] flex flex-col justify-between gap-4">
+              <div class="flex items-center justify-between">
+                <span data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface-variant">Total Tasks</span>
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-DEFAULT bg-light-secondary-container text-light-on-secondary-container">
+                  <i data-lucide="layers" class="w-4 h-4"></i>
+                </span>
+              </div>
+              <div class="flex items-baseline justify-between gap-2">
+                <span id="stat-total" data-design-text-token="display-lg" class="font-display text-display-lg text-light-on-surface tabular-nums">9</span>
+                <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">4 categories active</span>
+              </div>
+            </article>
+
+            <!-- Card 2: Completed Tasks + Circular Progress Indicator -->
+            <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="h-full bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-5 shadow-[0_1px_3px_rgba(15,23,42,0.04),0_4px_12px_rgba(15,23,42,0.03)] flex items-center justify-between gap-4">
+              <div class="flex flex-col justify-between h-full gap-4">
+                <span data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface-variant">Completed Tasks</span>
+                <div class="flex flex-col gap-0.5">
+                  <span id="stat-completed" data-design-text-token="display-lg" class="font-display text-display-lg text-light-on-surface tabular-nums">2</span>
+                  <span data-design-text-token="body-sm" class="font-body text-body-sm text-on-success-container">Today&#39;s completion rate</span>
+                </div>
+              </div>
+              <!-- Circular Progress Ring -->
+              <div class="relative w-20 h-20 flex-shrink-0 flex items-center justify-center" aria-label="Today&#39;s completion percentage">
+                <svg class="w-20 h-20 -rotate-90" viewBox="0 0 80 80">
+                  <circle cx="40" cy="40" r="32" fill="none" stroke="#ECEEF4" stroke-width="7"></circle>
+                  <circle id="progress-ring" cx="40" cy="40" r="32" fill="none" stroke="#6D28D9" stroke-width="7" stroke-linecap="round" stroke-dasharray="201.06" stroke-dashoffset="120.6" style="transition: stroke-dashoffset 280ms cubic-bezier(0.22, 1, 0.36, 1);"></circle>
+                </svg>
+                <span id="stat-percent" data-design-text-token="title-sm" class="absolute font-title text-title-sm text-light-on-surface tabular-nums">40%</span>
+              </div>
+            </article>
+
+            <!-- Card 3: Pending Tasks -->
+            <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="h-full bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-5 shadow-[0_1px_3px_rgba(15,23,42,0.04),0_4px_12px_rgba(15,23,42,0.03)] flex flex-col justify-between gap-4">
+              <div class="flex items-center justify-between">
+                <span data-design-text-token="label-lg" class="font-label text-label-lg text-light-on-surface-variant">Pending Tasks</span>
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-DEFAULT bg-warning-container text-on-warning-container">
+                  <i data-lucide="clock" class="w-4 h-4"></i>
+                </span>
+              </div>
+              <div class="flex items-baseline justify-between gap-2">
+                <span id="stat-pending" data-design-text-token="display-lg" class="font-display text-display-lg text-light-on-surface tabular-nums">7</span>
+                <span id="stat-high-priority" data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-error-container">3 high priority</span>
+              </div>
+            </article>
+          </section>
+
+          <!-- Today's Tasks Section -->
+          <section id="today-section" aria-label="Today&#39;s Tasks" class="flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <h2 id="today-heading" data-design-text-token="headline-sm" class="font-headline text-headline-sm text-light-on-surface">Today&#39;s Tasks</h2>
+                <span id="today-badge" data-component-id="badge-numeric" data-component-type="badge" data-component-variant="numeric" role="status" class="inline-flex items-center justify-center min-w-[24px] h-6 px-2 rounded-full bg-light-secondary-container text-light-on-secondary-container tabular-nums">
+                  <span data-design-text-token="label-sm" class="font-label text-label-sm">5</span>
+                </span>
+              </div>
+              <span data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant">Click checkbox to complete</span>
+            </div>
+
+            <div id="today-task-list" class="bg-light-surface-container-lowest border border-light-outline-variant rounded-lg shadow-[0_1px_3px_rgba(15,23,42,0.04),0_4px_12px_rgba(15,23,42,0.03)] divide-y divide-light-outline-variant overflow-hidden">
+              <!-- Populated by script -->
+            </div>
+          </section>
+
+          <!-- Upcoming Tasks Section -->
+          <section id="upcoming-section" aria-label="Upcoming Tasks" class="flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+              <h2 data-design-text-token="headline-sm" class="font-headline text-headline-sm text-light-on-surface">Upcoming Tasks</h2>
+              <a href="../upcoming-tasks/UpcomingTasks.html" class="inline-flex items-center gap-1 text-light-primary hover:underline">
+                <span data-design-text-token="label-lg" class="font-label text-label-lg">View all upcoming</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <div id="upcoming-groups" class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+              <!-- Populated by script -->
+            </div>
+          </section>
+
+          <!-- Empty State (shown when search or filter has 0 results) -->
+          <section id="empty-state" class="hidden bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-10 flex flex-col items-center text-center gap-4">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrDLYn0GEaZRUiKRLTEQm7EPAvnHDNe7ygeAE2HeeAPL0MwcUHNCDFn4UhjdMrJ_ze0G_p0jHYSkUpWwMjO1xOMj88gkghuTkUjjH8h3ScQUDmvaVuot-WWm6M8JS5oRzSkwSsw8p84K76q8fc6rKSNhqgOjVKrDTH6bzVOJf2iBxUDA8yzM6ZWO8GJW7U0tQ-bGsNjyh59OXkX4reJ92dl-9bstio-I4eOonpmLyGDDU8iGkGb_rsl-RwracMdCGPnwlQ" alt="Calm desk illustration for empty task list" class="w-48 h-36 object-cover rounded-md" data-stitch-original-src="a683f1dce7a4e433===../../images/empty_tasks_illustration.jpg">
+            <div class="flex flex-col gap-1 max-w-sm">
+              <h3 data-design-text-token="title-md" class="font-title text-title-md text-light-on-surface">No tasks match this view</h3>
+              <p data-design-text-token="body-md" class="font-body text-body-md text-light-on-surface-variant text-pretty">Create a new task or clear your search filter to see your schedule.</p>
+            </div>
+            <button type="button" onclick="openAddTaskModal()" class="inline-flex items-center gap-2 px-4 py-2 rounded-DEFAULT bg-light-primary text-light-on-primary hover:bg-light-primary-container transition-colors duration-state-change cursor-pointer">
+              <i data-lucide="plus" class="w-4 h-4"></i>
+              <span data-design-text-token="label-lg" class="font-label text-label-lg">Add New Task</span>
+            </button>
+          </section>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Add New Task Modal -->
+  <dialog id="add-task-dialog" data-component-id="modal-standard" data-component-type="modal" data-component-variant="standard" aria-labelledby="modal-title" class="w-full max-w-lg rounded-xl bg-light-surface-container-lowest border border-light-outline-variant p-0 shadow-[0_20px_40px_-12px_rgba(15,23,42,0.14)] m-auto">
+    <form id="add-task-form" onsubmit="handleCreateTask(event)">
+      <header class="flex items-start justify-between px-6 pt-6 pb-4 border-b border-light-outline-variant">
+        <div>
+          <h2 id="modal-title" data-design-text-token="headline-sm" class="font-headline text-headline-sm text-light-on-surface">Add New Task</h2>
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant mt-0.5">Schedule a task with priority and category.</p>
+        </div>
+        <button type="button" onclick="closeAddTaskModal()" aria-label="Close modal" class="inline-flex items-center justify-center w-8 h-8 rounded-sm text-light-on-surface-variant hover:bg-light-surface-container-low transition-colors duration-state-change cursor-pointer">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </header>
+
+      <div class="px-6 py-5 flex flex-col gap-4">
+        <label class="flex flex-col gap-1.5">
+          <span data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface">Task title</span>
+          <input id="new-task-title" type="text" required placeholder="e.g., Review Q4 product roadmap" class="w-full px-3.5 py-2.5 rounded-DEFAULT bg-light-surface-container-lowest border border-light-outline-variant text-light-on-surface placeholder:text-light-outline font-body text-body-md focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
+        </label>
+
+        <label class="flex flex-col gap-1.5">
+          <span data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface">Description</span>
+          <textarea id="new-task-desc" rows="2" placeholder="Add context, links, or key deliverables..." class="w-full px-3.5 py-2.5 rounded-DEFAULT bg-light-surface-container-lowest border border-light-outline-variant text-light-on-surface placeholder:text-light-outline font-body text-body-md focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 resize-none"></textarea>
+        </label>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <label class="flex flex-col gap-1.5">
+            <span data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface">Due date</span>
+            <input id="new-task-date" type="date" value="2026-11-25" class="w-full px-3.5 py-2.5 rounded-DEFAULT bg-light-surface-container-lowest border border-light-outline-variant text-light-on-surface font-body text-body-md focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
+          </label>
+
+          <label class="flex flex-col gap-1.5">
+            <span data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface">Category</span>
+            <select id="new-task-category" class="w-full px-3.5 py-2.5 rounded-DEFAULT bg-light-surface-container-lowest border border-light-outline-variant text-light-on-surface font-body text-body-md focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20">
+              <option value="Product Design">Product Design</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Personal">Personal</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <span data-design-text-token="label-md" class="font-label text-label-md text-light-on-surface">Priority</span>
+          <div class="grid grid-cols-3 gap-2.5">
+            <label class="cursor-pointer">
+              <input type="radio" name="priority" value="High" class="peer sr-only">
+              <span class="flex items-center justify-center gap-1.5 px-3 py-2 rounded-DEFAULT border border-light-outline-variant text-light-on-surface-variant peer-checked:border-light-error peer-checked:bg-light-error-container peer-checked:text-light-on-error-container transition-colors duration-state-change">
+                <span class="w-2 h-2 rounded-full bg-light-error"></span>
+                <span data-design-text-token="label-md" class="font-label text-label-md">High</span>
+              </span>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="priority" value="Medium" checked class="peer sr-only">
+              <span class="flex items-center justify-center gap-1.5 px-3 py-2 rounded-DEFAULT border border-light-outline-variant text-light-on-surface-variant peer-checked:border-warning peer-checked:bg-warning-container peer-checked:text-on-warning-container transition-colors duration-state-change">
+                <span class="w-2 h-2 rounded-full bg-warning"></span>
+                <span data-design-text-token="label-md" class="font-label text-label-md">Medium</span>
+              </span>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="priority" value="Low" class="peer sr-only">
+              <span class="flex items-center justify-center gap-1.5 px-3 py-2 rounded-DEFAULT border border-light-outline-variant text-light-on-surface-variant peer-checked:border-success peer-checked:bg-success-container peer-checked:text-on-success-container transition-colors duration-state-change">
+                <span class="w-2 h-2 rounded-full bg-success"></span>
+                <span data-design-text-token="label-md" class="font-label text-label-md">Low</span>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <footer class="flex items-center justify-end gap-3 px-6 py-4 bg-light-surface-container-low/60 border-t border-light-outline-variant rounded-b-xl">
+        <button type="button" onclick="closeAddTaskModal()" class="px-4 py-2 rounded-DEFAULT bg-light-surface-container-lowest border border-light-outline-variant text-light-on-surface hover:bg-light-surface-container-low transition-colors duration-state-change cursor-pointer">
+          <span data-design-text-token="label-lg" class="font-label text-label-lg">Cancel</span>
+        </button>
+        <button type="submit" class="px-4 py-2 rounded-DEFAULT bg-light-primary text-light-on-primary hover:bg-light-primary-container transition-colors duration-state-change shadow-sm cursor-pointer">
+          <span data-design-text-token="label-lg" class="font-label text-label-lg">Save Task</span>
+        </button>
+      </footer>
+    </form>
+  </dialog>
+
+  <script>
+    const INITIAL_TASKS = [
+      {
+        id: 't1',
+        title: 'Finalize Taskly design system tokens',
+        description: 'Audit spacing scale, contrast ratios, and button states before handoff.',
+        dueDate: '2026-11-25',
+        dueTime: '2:00 PM',
+        priority: 'High',
+        category: 'Product Design',
+        completed: false,
+        important: true
+      },
+      {
+        id: 't2',
+        title: 'Ship keyboard shortcut command palette',
+        description: 'Support Cmd+K quick search and arrow-key navigation across task rows.',
+        dueDate: '2026-11-25',
+        dueTime: '4:30 PM',
+        priority: 'High',
+        category: 'Engineering',
+        completed: false,
+        important: true
+      },
+      {
+        id: 't3',
+        title: 'Review Q4 launch email sequence',
+        description: 'Tighten subject lines and verify UTM tracking links with growth team.',
+        dueDate: '2026-11-25',
+        dueTime: '5:15 PM',
+        priority: 'Medium',
+        category: 'Marketing',
+        completed: false,
+        important: false
+      },
+      {
+        id: 't4',
+        title: 'Sync with mobile team on offline cache',
+        description: 'Confirm optimistic checkbox updates reconcile cleanly after reconnect.',
+        dueDate: '2026-11-25',
+        dueTime: '11:00 AM',
+        priority: 'Low',
+        category: 'Engineering',
+        completed: true,
+        important: false
+      },
+      {
+        id: 't5',
+        title: 'Pick up espresso beans and oat milk',
+        description: 'Stop by Blue Bottle on the way back from the studio.',
+        dueDate: '2026-11-25',
+        dueTime: '6:30 PM',
+        priority: 'Low',
+        category: 'Personal',
+        completed: true,
+        important: false
+      },
+      {
+        id: 't6',
+        title: 'Prepare user interview synthesis deck',
+        description: 'Summarize 6 customer sessions on recurring task workflows.',
+        dueDate: '2026-11-26',
+        dueTime: '10:30 AM',
+        priority: 'High',
+        category: 'Product Design',
+        completed: false,
+        important: true
+      },
+      {
+        id: 't7',
+        title: 'Optimize task query indexing in Postgres',
+        description: 'Add composite index on workspace_id and due_date for faster load.',
+        dueDate: '2026-11-26',
+        dueTime: '3:00 PM',
+        priority: 'Medium',
+        category: 'Engineering',
+        completed: false,
+        important: false
+      },
+      {
+        id: 't8',
+        title: 'Publish Product Hunt teaser graphics',
+        description: 'Export light-mode dashboard shots at 2x resolution.',
+        dueDate: '2026-11-27',
+        dueTime: '1:00 PM',
+        priority: 'Medium',
+        category: 'Marketing',
+        completed: false,
+        important: false
+      },
+      {
+        id: 't9',
+        title: 'Refine onboarding empty-state illustrations',
+        description: 'Align stroke weights and soft violet accents across all views.',
+        dueDate: '2026-11-27',
+        dueTime: '4:00 PM',
+        priority: 'Low',
+        category: 'Product Design',
+        completed: false,
+        important: false
+      }
+    ];
+
+    let tasks = [...INITIAL_TASKS];
+    let currentView = 'dashboard';
+    let searchQuery = '';
+    let openMenuId = null;
+
+    function getPriorityBadge(priority) {
+      if (priority === 'High') {
+        return `<span data-component-id="badge-error" data-component-type="badge" data-component-variant="error" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-light-error-container text-light-on-error-container">
+          <span class="w-1.5 h-1.5 rounded-full bg-light-error" aria-hidden="true"></span>
+          <span data-design-text-token="label-md" class="font-label text-label-md">High</span>
+        </span>`;
+      }
+      if (priority === 'Medium') {
+        return `<span data-component-id="badge-warning" data-component-type="badge" data-component-variant="warning" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-warning-container text-on-warning-container">
+          <span class="w-1.5 h-1.5 rounded-full bg-warning" aria-hidden="true"></span>
+          <span data-design-text-token="label-md" class="font-label text-label-md">Medium</span>
+        </span>`;
+      }
+      return `<span data-component-id="badge-success" data-component-type="badge" data-component-variant="success" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-success-container text-on-success-container">
+        <span class="w-1.5 h-1.5 rounded-full bg-success" aria-hidden="true"></span>
+        <span data-design-text-token="label-md" class="font-label text-label-md">Low</span>
+      </span>`;
+    }
+
+    function renderTaskRow(task) {
+      const doneClasses = task.completed ? 'opacity-60' : '';
+      const titleStrike = task.completed ? 'line-through text-light-on-surface-variant' : 'text-light-on-surface';
+      return `
+        <div class="group relative flex items-start sm:items-center justify-between gap-4 px-5 py-4 hover:bg-light-surface-container-low/60 transition-colors duration-state-change ${doneClasses}">
+          <div class="flex items-start gap-3.5 min-w-0 flex-1">
+            <label class="relative inline-flex items-center mt-0.5 cursor-pointer flex-shrink-0">
+              <input type="checkbox" class="task-checkbox sr-only" ${task.completed ? 'checked' : ''} onchange="toggleTask('${task.id}')" aria-label="Mark ${task.title} as ${task.completed ? 'incomplete' : 'complete'}">
+              <span class="checkbox-box w-5 h-5 rounded-sm border-2 border-light-outline/60 bg-light-surface-container-lowest flex items-center justify-center transition-all duration-checkbox-pop group-hover:border-accent">
+                <svg class="w-3.5 h-3.5 text-light-on-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+            </label>
+            <div class="flex flex-col gap-0.5 min-w-0">
+              <div class="flex items-center gap-2">
+                <span data-design-text-token="title-sm" class="font-title text-title-sm ${titleStrike}">${task.title}</span>
+                ${task.important ? '<i data-lucide="star" class="w-3.5 h-3.5 text-warning fill-warning flex-shrink-0"></i>' : ''}
+              </div>
+              <p data-design-text-token="body-sm" class="font-body text-body-sm text-light-on-surface-variant line-clamp-1">${task.description}</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap sm:flex-nowrap items-center gap-2.5 flex-shrink-0">
+            <span class="inline-flex items-center gap-1 text-light-on-surface-variant">
+              <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+              <span data-design-text-token="mono-sm" class="font-mono text-mono-sm tabular-nums">${task.dueTime}</span>
+            </span>
+            ${getPriorityBadge(task.priority)}
+            <span data-component-id="badge-status" data-component-type="badge" data-component-variant="status" class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-light-surface-container-low text-light-on-surface-variant border border-light-outline-variant">
+              <span data-design-text-token="label-md" class="font-label text-label-md">${task.category}</span>
+            </span>
+            <div class="relative">
+              <button type="button" onclick="toggleTaskMenu('${task.id}')" aria-label="Task actions" class="inline-flex items-center justify-center w-8 h-8 rounded-sm text-light-on-surface-variant hover:text-light-on-surface hover:bg-light-surface-container transition-colors duration-state-change cursor-pointer">
+                <i data-lucide="more-horizontal" class="w-4 h-4"></i>
+              </button>
+              ${openMenuId === task.id ? `
+                <div class="absolute right-0 top-9 z-30 w-44 rounded-md bg-light-surface-container-lowest border border-light-outline-variant shadow-lg py-1.5">
+                  <button type="button" onclick="toggleImportant('${task.id}')" class="w-full flex items-center gap-2 px-3 py-1.5 text-left text-light-on-surface hover:bg-light-surface-container-low">
+                    <i data-lucide="star" class="w-3.5 h-3.5"></i>
+                    <span data-design-text-token="body-sm" class="font-body text-body-sm">${task.important ? 'Remove Important' : 'Mark Important'}</span>
+                  </button>
+                  <button type="button" onclick="deleteTask('${task.id}')" class="w-full flex items-center gap-2 px-3 py-1.5 text-left text-light-error hover:bg-light-error-container/50">
+                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                    <span data-design-text-token="body-sm" class="font-body text-body-sm">Delete Task</span>
+                  </button>
+                </div>
+              ` : ''}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function updateStats() {
+      const total = tasks.length;
+      const completed = tasks.filter(t => t.completed).length;
+      const pending = total - completed;
+      const highPending = tasks.filter(t => !t.completed && t.priority === 'High').length;
+
+      const todayTasks = tasks.filter(t => t.dueDate === '2026-11-25');
+      const todayCompleted = todayTasks.filter(t => t.completed).length;
+      const pct = todayTasks.length ? Math.round((todayCompleted / todayTasks.length) * 100) : 0;
+
+      document.getElementById('stat-total').textContent = total;
+      document.getElementById('stat-completed').textContent = completed;
+      document.getElementById('stat-pending').textContent = pending;
+      document.getElementById('stat-high-priority').textContent = `${highPending} high priority`;
+      document.getElementById('stat-percent').textContent = `${pct}%`;
+
+      const circumference = 201.06;
+      const offset = circumference - (pct / 100) * circumference;
+      document.getElementById('progress-ring').setAttribute('stroke-dashoffset', offset.toFixed(2));
+
+      document.getElementById('nav-count-all').textContent = total;
+      document.getElementById('nav-count-today').textContent = todayTasks.length;
+      document.getElementById('nav-count-upcoming').textContent = tasks.filter(t => t.dueDate > '2026-11-25').length;
+    }
+
+    function render() {
+      updateStats();
+
+      const q = searchQuery.trim().toLowerCase();
+      const filtered = tasks.filter(t => {
+        if (q && !t.title.toLowerCase().includes(q) && !t.description.toLowerCase().includes(q) && !t.category.toLowerCase().includes(q)) {
+          return false;
+        }
+        if (currentView === 'today') return t.dueDate === '2026-11-25';
+        if (currentView === 'upcoming') return t.dueDate > '2026-11-25';
+        if (currentView === 'completed') return t.completed;
+        if (currentView === 'important') return t.important;
+        if (currentView.startsWith('cat-')) return t.category === currentView.replace('cat-', '');
+        return true;
+      });
+
+      const overviewEl = document.getElementById('overview-section');
+      const todayEl = document.getElementById('today-section');
+      const upcomingEl = document.getElementById('upcoming-section');
+      const emptyEl = document.getElementById('empty-state');
+
+      if (filtered.length === 0) {
+        todayEl.classList.add('hidden');
+        upcomingEl.classList.add('hidden');
+        emptyEl.classList.remove('hidden');
+        lucide.createIcons();
+        return;
+      }
+
+      emptyEl.classList.add('hidden');
+
+      if (currentView === 'dashboard') {
+        overviewEl.classList.remove('hidden');
+        todayEl.classList.remove('hidden');
+        upcomingEl.classList.remove('hidden');
+
+        const todayItems = filtered.filter(t => t.dueDate === '2026-11-25');
+        document.getElementById('today-heading').textContent = "Today's Tasks";
+        document.getElementById('today-badge').querySelector('span').textContent = todayItems.length;
+        document.getElementById('today-task-list').innerHTML = todayItems.map(renderTaskRow).join('');
+
+        const upcomingItems = filtered.filter(t => t.dueDate > '2026-11-25');
+        const groups = {};
+        upcomingItems.forEach(t => {
+          groups[t.dueDate] = groups[t.dueDate] || [];
+          groups[t.dueDate].push(t);
+        });
+
+        const dateLabels = {
+          '2026-11-26': 'Tomorrow · Thu, Nov 26',
+          '2026-11-27': 'Friday · Nov 27'
+        };
+
+        document.getElementById('upcoming-groups').innerHTML = Object.keys(groups).sort().map(date => `
+          <div class="bg-light-surface-container-lowest border border-light-outline-variant rounded-lg shadow-[0_1px_3px_rgba(15,23,42,0.04),0_4px_12px_rgba(15,23,42,0.03)] overflow-hidden">
+            <div class="flex items-center justify-between px-5 py-3.5 bg-light-surface-container-low/50 border-b border-light-outline-variant">
+              <div class="flex items-center gap-2">
+                <i data-lucide="calendar" class="w-4 h-4 text-accent"></i>
+                <h3 data-design-text-token="title-sm" class="font-title text-title-sm text-light-on-surface">${dateLabels[date] || date}</h3>
+              </div>
+              <span data-design-text-token="label-sm" class="font-label text-label-sm text-light-on-surface-variant tabular-nums">${groups[date].length} tasks</span>
+            </div>
+            <div class="divide-y divide-light-outline-variant">
+              ${groups[date].map(renderTaskRow).join('')}
+            </div>
+          </div>
+        `).join('');
+      } else {
+        overviewEl.classList.toggle('hidden', currentView !== 'all');
+        todayEl.classList.remove('hidden');
+        upcomingEl.classList.add('hidden');
+        const titles = {
+          all: 'My Tasks',
+          today: "Today's Tasks",
+          upcoming: 'Upcoming Tasks',
+          completed: 'Completed Tasks',
+          important: 'Important Tasks'
+        };
+        const label = currentView.startsWith('cat-') ? `${currentView.replace('cat-', '')} Tasks` : titles[currentView];
+        document.getElementById('today-heading').textContent = label;
+        document.getElementById('today-badge').querySelector('span').textContent = filtered.length;
+        document.getElementById('today-task-list').innerHTML = filtered.map(renderTaskRow).join('');
+      }
+
+      lucide.createIcons();
+    }
+
+    function switchView(view) {
+      currentView = view;
+      document.querySelectorAll('.nav-item').forEach(btn => {
+        const isActive = btn.getAttribute('data-nav') === view;
+        btn.classList.toggle('bg-light-secondary-container', isActive);
+        btn.classList.toggle('text-light-on-secondary-container', isActive);
+        btn.classList.toggle('text-light-on-surface-variant', !isActive);
+      });
+      const main = document.getElementById('main-content');
+      main.classList.remove('view-transition');
+      void main.offsetWidth;
+      main.classList.add('view-transition');
+      toggleMobileSidebar(false);
+      render();
+    }
+
+    function toggleTask(id) {
+      tasks = tasks.map(t => t.id === id ? { ...t, completed: !t.completed } : t);
+      render();
+    }
+
+    function toggleTaskMenu(id) {
+      openMenuId = openMenuId === id ? null : id;
+      render();
+    }
+
+    function toggleImportant(id) {
+      tasks = tasks.map(t => t.id === id ? { ...t, important: !t.important } : t);
+      openMenuId = null;
+      render();
+    }
+
+    function deleteTask(id) {
+      tasks = tasks.filter(t => t.id !== id);
+      openMenuId = null;
+      render();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val;
+      render();
+    }
+
+    function openAddTaskModal() {
+      document.getElementById('add-task-dialog').showModal();
+    }
+
+    function closeAddTaskModal() {
+      document.getElementById('add-task-dialog').close();
+    }
+
+    function handleCreateTask(e) {
+      e.preventDefault();
+      const title = document.getElementById('new-task-title').value.trim();
+      if (!title) return;
+      const desc = document.getElementById('new-task-desc').value.trim() || 'Scheduled via Taskly quick capture.';
+      const dueDate = document.getElementById('new-task-date').value || '2026-11-25';
+      const category = document.getElementById('new-task-category').value;
+      const priority = document.querySelector('input[name="priority"]:checked')?.value || 'Medium';
+
+      tasks.unshift({
+        id: 't-' + Date.now(),
+        title,
+        description: desc,
+        dueDate,
+        dueTime: '5:00 PM',
+        priority,
+        category,
+        completed: false,
+        important: priority === 'High'
+      });
+
+      e.target.reset();
+      closeAddTaskModal();
+      render();
+    }
+
+    function toggleMobileSidebar(open) {
+      const sidebar = document.getElementById('sidebar');
+      const backdrop = document.getElementById('mobile-backdrop');
+      if (open) {
+        sidebar.classList.remove('-translate-x-full');
+        backdrop.classList.remove('hidden');
+      } else {
+        sidebar.classList.add('-translate-x-full');
+        backdrop.classList.add('hidden');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      render();
+    });
+  </script>
+
+
+</body></html>
